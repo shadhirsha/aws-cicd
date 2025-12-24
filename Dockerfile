@@ -18,7 +18,9 @@ FROM amazon/aws-lambda-nodejs
 
 ENV PORT=5000
 
-COPY --from=builder /app/ ${LAMBDA_TASK_ROOT}
+WORKDIR ${LAMBDA_TASK_ROOT}
+
+COPY --from=builder /app/ .
 
 EXPOSE 5000
 
