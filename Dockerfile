@@ -8,7 +8,11 @@ COPY package.json .
 
 RUN pnpm install
 
+COPY pnpm-lock.yaml package.json ./
+
 COPY . .
+
+RUN pnpm run build
 
 USER root
 
@@ -23,5 +27,5 @@ COPY --from=builder /app/pnpm-lock.yaml ${LAMBDA_TASK_ROOT}
 
 EXPOSE 5000
 
-CMD [ "lambda.handler" ]
+CMD [ "dist/lambda.handler" ]
 

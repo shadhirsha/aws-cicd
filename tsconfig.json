@@ -19,6 +19,13 @@
     "outDir": "dist",
     "rootDir": "."
   },
-  "include": ["index.ts", "src", "express", "dev/seed-mongo"],
+  "include": [
+    "lambda.ts",
+    "app.ts",
+    "index.ts",
+    "src",
+    "express",
+    "dev/seed-mongo"
+  ],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
