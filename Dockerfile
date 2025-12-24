@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 
 COPY . .
 
